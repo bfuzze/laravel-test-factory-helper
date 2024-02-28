@@ -1,11 +1,30 @@
 /* @@var $factory \Illuminate\Database\Eloquent\Factory */
 
-use Faker\Generator as Faker;
+use \Illuminate\Foundation\Testing\WithFaker;
+use {{ $model_class }};
 
-$factory->define({{ $reflection->getName() }}::class, function (Faker $faker) {
-    return [
+class {{ $factory_class_name }} extends Factory
+{
+    use WithFaker;
+
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var string
+     */
+    protected $model = {{ $model_class_short }}::class;
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
 @foreach($properties as $name => $property)
-        '{{$name}}' => {!! $property !!},
+            '{{ $name }}' => {!! $property !!},
 @endforeach
-    ];
-});
+        ];
+    }
+}

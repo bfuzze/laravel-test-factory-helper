@@ -13,7 +13,7 @@ class {{ $factory_class_name }} extends Factory
      *
      * @var string
      */
-    protected string $model = {{ $model_class_short }}::class;
+    protected $model = {{ $model_class_short }}::class;
 
     /**
      * Define the model's default state.

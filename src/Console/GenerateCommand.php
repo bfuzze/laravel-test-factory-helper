@@ -2,6 +2,7 @@
 
 namespace Mpociot\LaravelTestFactoryHelper\Console;
 
+use Archetype\Facades\PHPFile;
 use Doctrine\DBAL\Types\Type;
 use Illuminate\Console\Command;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -288,6 +289,11 @@ class GenerateCommand extends Command
                 }
             }
         }
+
+        PHPFile::load($model::class)
+            ->add()->use(HasFactory::class)
+            ->add()->useTrait('HasFactory')
+            ->save();
     }
 
     /**

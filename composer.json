@@ -12,13 +12,13 @@
     },
     "autoload": {
         "psr-4": {
-            "bfuzze\\LaravelTestFactoryHelper\\": "src/"
+            "Mpociot\\LaravelTestFactoryHelper\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "bfuzze\\LaravelTestFactoryHelper\\TestFactoryHelperServiceProvider"
+                "Mpociot\\LaravelTestFactoryHelper\\TestFactoryHelperServiceProvider"
             ]
         }
     }

@@ -82,7 +82,7 @@ class GenerateCommand extends Command
         $models = $this->loadModels($this->argument('model'));
 
         foreach ($models as $model) {
-            $filename = 'database/factories/' . class_basename($model) . 'Factory.php';
+            $filename = base_path() . '/database/factories/' . class_basename($model) . 'Factory.php';
 
             if ($this->files->exists($filename) && !$this->force) {
                 $this->line('<fg=yellow>Model factory exists, use --force to overwrite:</fg=yellow> ' . $filename);
